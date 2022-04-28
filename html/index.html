@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-3.6.0.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            var i=1;
+            $('#btnDK').click(function(){
+                $('#myModal').modal()
+            })
+            
+            // kiem tra ho  ten
+            function kiemTraHT(){
+                var mau=/^[A-Z][a-z]*(\s[[A-Z][a-z]*)*$/
+                var kTra=$('#txtHT').val()
+                if(kTra.trim()==''){
+                    $('#erHT').html('Vui long nhap day du')
+                    return false;
+                } 
+                if(!mau.test(kTra)){
+                    $('#erHT').html('Nhap sai')
+                    return false
+                }
+                $('#erHT').html('Nhap dung')
+                return true
+            }
+            $('#txtHT').blur(kiemTraHT)
+            // kiem tra So ao
+            function kiemTraNo(){
+                var mau=/^[0-9]{1,20}$/
+                var kTra=$('#txtNo').val()
+                if(kTra.trim()==''){
+                    $('#erNo').html('Vui long nhap day du')
+                    return false;
+                } 
+                if(!mau.test(kTra)){
+                    $('#erNo').html('Nhap sai')
+                    return false
+                }
+                $('#erNo').html('Nhap dung')
+                return true
+            }
+            $('#txtNo').blur(kiemTraNo)
+
+            // kiem tra Cau lac bo
+            function kiemTraCLB(){
+                var mau=/^([A-Z][a-z])*|([0-9])*(\s([A-Z][a-z])|([0-9])*)*$/
+                var kTra=$('#txtCLB').val()
+                if(kTra.trim()==''){
+                    $('#erCLB').html('Vui long nhap day du')
+                    return false;
+                } 
+                if(!mau.test(kTra)){
+                    $('#erCLB').html('Nhap sai')
+                    return false
+                }
+                $('#erCLB').html('Nhap dung')
+                return true
+            }
+            $('#txtCLB').blur(kiemTraCLB)
+
+            //kiem tra ngay tap trung
+            function kiemTraHT(){
+                var mau=/^[A-Z][a-z]*(\s[[A-Z][a-z]*)*$/
+                var kTra=$('#txtHT').val()
+                if(kTra.trim()==''){
+                    $('#erHT').html('Vui long nhap day du')
+                    return false;
+                } 
+                if(!mau.test(kTra)){
+                    $('#erHT').html('Nhap sai')
+                    return false
+                }
+                $('#erHT').html('Nhap dung')
+                return true
+            }
+            $('#txtHT').blur(kiemTraHT)
+
+            //kiem tra so dien thoai
+            function kiemTraHT(){
+                var mau=/^[A-Z][a-z]*(\s[[A-Z][a-z]*)*$/
+                var kTra=$('#txtHT').val()
+                if(kTra.trim()==''){
+                    $('#erHT').html('Vui long nhap day du')
+                    return false;
+                } 
+                if(!mau.test(kTra)){
+                    $('#erHT').html('Nhap sai')
+                    return false
+                }
+                $('#erHT').html('Nhap dung')
+                return true
+            }
+            $('#txtHT').blur(kiemTraHT)
+
+            //Them thong tin
+            
+
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="../img/HEADER.PNG" alt="" srcset="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="navbar navbar-expand-md col-md-12">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#" class="nav-link" id="btnDK">Đăng kí</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Đăng nhập</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center text-uppercase font-weight-normal">
+                <h1><small>Danh sách đội tuyển việt nam</small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <section>
+                    <table class="table table-striped font-weight-bold">
+                        <thead>
+                            <tr>
+                                <td>STT</td>
+                                <td>Họ tên</td>
+                                <td>Số áo</td>
+                                <td>Câu lạc bộ </td>
+                                <td>Ngày tập trung</td>
+                                <td>Điện thoại</td>
+                                <td>Ảnh đại diện</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nguyen Cong Phuong</td>
+                                <td>10</td>
+                                <td>hoang Anh Gia Lai 1</td>
+                                <td>22/12/2012</td>
+                                <td>0989-888-777</td>
+                                <td>Anh1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <footer class="col-md-12 text-center">
+                <p>SVTH: Phan Đình Phước...Mã Sinh Viên: 20047491 ...Lớp: DHCNTT16B</p>
+            </footer>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content ">
+                <div class="modal-header text-uppercase font-weight-bold">
+                    <h1>Thông tin cá nhân</h1>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="">Họ tên</label>
+                            <input type="text" id="txtHT" placeholder="Nhập họ tên" class="form-control">
+                            <span id="erHT" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Số áo</label>
+                            <input type="text" id="txtNo" placeholder="Nhập số áo đội tuyển" class="form-control">
+                            <span id="erNo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Câu lạc bộ</label>
+                            <input type="text" id="txtCLB" placeholder="Câu lạc bộ của bạn" class="form-control">
+                            <span id="erCLB" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ngày tập trung</label>
+                            <input type="date" id="txtNTT"  class="form-control">
+                            <span id="erDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Số điện thoại</label>
+                            <input type="text" id="txtSDT" placeholder="0xxx-xxx-xxx" class="form-control">
+                            <span id="erSDT" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ảnh đại diện</label>
+                            <input type="file" id="txtAVT"  class="form-control">
+                            <span id="erAVT" class="text-danger"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" style="display: block;" >
+                    <button type="submit" id="btnSub" class="button bg-success text-center " >Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
